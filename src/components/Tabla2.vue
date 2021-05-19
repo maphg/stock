@@ -12,7 +12,9 @@
 			<selector :valores="['uno', 'dos']" texto="Marca"></selector>
 			<selector :valores="['uno', 'dos']" texto="Rotacion"></selector>
 			<selector :valores="['uno', 'dos']" texto="SubFamilia"></selector>
-			<button class="bg-bluedemon-200 text-bluedemon-400 text-sm p-2 rounded-md flex items-center focus:outline-none"><span class="material-icons text-sm">sort</span>Filtrar</button>
+			<button class="mr-4 ml-1 bg-bluedemon-200 text-bluedemon-400 text-sm p-2 rounded-md flex items-center focus:outline-none"><span class="material-icons text-sm">sort</span>Filtrar</button>
+			<button class="mr-4 bg-green-200 text-green-400 text-sm p-2 rounded-md flex items-center focus:outline-none"><span class="material-icons text-sm">file_download</span>Exportar</button>
+			<button class="bg-purple-200 text-purple-400 text-sm p-2 rounded-md flex items-center focus:outline-none"><span class="material-icons text-sm">fast_forward</span>Estimación</button>
 		</div>
 
 		<div class="relative inline-block w-full md:w-1/12 text-gray-700 cursor-pointer bg-white" @click="menucol = !menucol">
