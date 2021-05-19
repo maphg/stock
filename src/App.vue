@@ -1,8 +1,8 @@
 <template>
-	<div id="nav">
+	<!-- <div id="nav">
 		<router-link to="/">Stock</router-link> |
 		<router-link to="/about">About</router-link>
-	</div>
+	</div> -->
 	<router-view />
 </template>
 
@@ -27,5 +27,26 @@
 
 	#nav a.router-link-exact-active {
 		color: #42b983;
+	}
+
+	/* width */
+	::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		@apply bg-bluedemon-200;
+		border-radius: 50px;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		@apply bg-bluedemon-500;
 	}
 </style>
