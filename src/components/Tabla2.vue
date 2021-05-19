@@ -103,7 +103,7 @@
 	<div class="">
 		<div class="flex items-center justify-center font-sans">
 			<div class="w-full">
-				<div class="bg-white shadow my-6 rounded-lg border maxh overflow-y-auto overflow-x-auto md:overflow-x-hidden">
+				<div class="bg-white shadow rounded-lg border maxh overflow-y-auto overflow-x-auto md:overflow-x-hidden mt-4">
 					<table class="min-w-max w-full table-fixed text-xxs font-semibold text-gray-800">
 						<thead class="leading-8 capitalize font-bold text-sm bg-gris-300 shadow-ms border-b">
 							<th v-if="toogleCol1" class="w-52 sticky top-0 bg-gris-300 ">Cod. 2bend</th>
@@ -202,6 +202,11 @@
 							</tr>
 						</tbody>
 					</table>
+				</div>
+				<div class="mt-2 flex flex-row justify-center items-center">
+					<div class="bg-gris-400 py-1 px-2 rounded shadow">
+						<h1 class="text-xs"><span class="font-bold">22</span> registros obtenidos!</h1>
+					</div>
 				</div>
 			</div>
 		</div>
