@@ -1,5 +1,5 @@
 <template>
-	<div class="font-bold text-xxs w-6 h-6 rounded-full uppercase mr-1 flex flex-none items-center justify-center" :class="ClaseFinal">
+	<div class="font-bold text-xs w-8 h-8 rounded-full uppercase mr-4 flex flex-none items-center justify-center" :class="ClaseFinal">
 		<h1>{{ seccion }}</h1>
 	</div>
 </template>

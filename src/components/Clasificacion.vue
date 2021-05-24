@@ -1,6 +1,6 @@
 <template>
-	<div class="flex flex-row items-center justify-center">
-		<h1 class="font-bold text-xxs px-2 rounded-sm uppercase" :class="Final">{{ clasificacion }}</h1>
+	<div class="font-bold texto w-8 h-8 rounded-full uppercase mr-4 flex flex-none items-center justify-center" :class="Final">
+		<h1>{{ clasificacion }}</h1>
 	</div>
 </template>
 
@@ -16,8 +16,8 @@
 			const clasificacion1 = props.clasificacion;
 
 			const Tipos = {
-				"FF&E": "bg-zia-300 text-zia-500",
-				"OS&E": "bg-yellow-300 text-yellow-500",
+				"FF&E": "bg-zia-300 text-zia-500 ring ring-zia-100",
+				"OS&E": "bg-yellow-300 text-yellow-500 ring ring-yellow-100",
 			};
 			const ClasificacionDefault = "bg-gray-100 text-gray-500";
 
@@ -28,4 +28,9 @@
 	};
 </script>
 
-<style></style>
+<style scoped>
+	.texto {
+		font-size: 0.65rem /* 12px */;
+		line-height: 1rem /* 16px */;
+	}
+</style>

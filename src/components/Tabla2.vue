@@ -14,9 +14,10 @@
 			<selector :valores="['uno', 'dos']" texto="SubFamilia"></selector>
 			<button class="mr-4 ml-1 bg-bluedemon-200 text-bluedemon-400 text-sm p-2 rounded-md flex items-center focus:outline-none"><span class="material-icons text-sm">sort</span>Filtrar</button>
 			<button class="mr-4 bg-green-200 text-green-400 text-sm p-2 rounded-md flex items-center focus:outline-none"><span class="material-icons text-sm">file_download</span>Exportar</button>
-			<button class="bg-purple-200 text-purple-400 text-sm p-2 rounded-md flex items-center focus:outline-none"><span class="material-icons text-sm">fast_forward</span>Estimación</button>
+			<button class="bg-purple-200 text-purple-400 text-sm p-2 rounded-md flex items-center focus:outline-none"><span class="material-icons text-sm">fast_forward</span>Proyeccion 10 años</button>
 		</div>
 
+		<div class="bg-gray-800 opacity-40 absolute w-full z-50 h-full top-0" v-if="menucol" @click="menucol = !menucol">d</div>
 		<div class="relative inline-block w-full md:w-1/12 text-gray-700 cursor-pointer bg-white" @click="menucol = !menucol">
 			<div class="w-full h-10 pl-3 pr-6 text-xs border rounded-lg appearance-none focus:shadow-outline flex items-center">
 				<span class="material-icons text-lg mr-2 " :class="{ 'text-bluedemon-400': menucol }">filter_list</span>
@@ -25,78 +26,80 @@
 			<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
 				<svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
 			</div>
-			<div class="absolute  text-xs border rounded mt-2 bg-white z-50 flex w-full flex-col shadow" v-if="menucol">
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol1 = !toogleCol1">
-					<span v-if="toogleCol1 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol1" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Cod. 2bend</h1>
+			<transition mode="out-in" enter-active-class="animate__animated animate__bounceIn" leave-active-class="animate__animated animate__fadeOut">
+				<div class="absolute  text-xs border rounded mt-2 bg-white z-50 flex w-full flex-col shadow" v-if="menucol">
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol1 = !toogleCol1">
+						<span v-if="toogleCol1 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol1" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Cod. 2bend</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol2 = !toogleCol2">
+						<span v-if="toogleCol2 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol2" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Descripción SSTT</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol3 = !toogleCol3">
+						<span v-if="toogleCol3 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol3" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Seccion/Área</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol4 = !toogleCol4">
+						<span v-if="toogleCol4 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol4" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Grupos/Etiquetas</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol5 = !toogleCol5">
+						<span v-if="toogleCol5 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol5" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Clasificación</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol6 = !toogleCol6">
+						<span v-if="toogleCol6 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol6" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Marca/Modelo</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol7 = !toogleCol7">
+						<span v-if="toogleCol7 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol7" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Caracteristicas</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol8 = !toogleCol8">
+						<span v-if="toogleCol8 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol8" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Referencia</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol9 = !toogleCol9">
+						<span v-if="toogleCol9 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol9" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Rotación</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol10 = !toogleCol10">
+						<span v-if="toogleCol10 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol10" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Stock</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol11 = !toogleCol11">
+						<span v-if="toogleCol11 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol11" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Coste U.</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol12 = !toogleCol12">
+						<span v-if="toogleCol12 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol12" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Coste Almacen</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol13 = !toogleCol13">
+						<span v-if="toogleCol13 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol13" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Subfamilia SSTT</h1>
+					</div>
+					<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol14 = !toogleCol14">
+						<span v-if="toogleCol14 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
+						<span v-if="toogleCol14" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
+						<h1>Tiempos</h1>
+					</div>
 				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol2 = !toogleCol2">
-					<span v-if="toogleCol2 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol2" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Descripción SSTT</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol3 = !toogleCol3">
-					<span v-if="toogleCol3 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol3" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Seccion/Área</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol4 = !toogleCol4">
-					<span v-if="toogleCol4 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol4" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Grupos/Etiquetas</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol5 = !toogleCol5">
-					<span v-if="toogleCol5 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol5" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Clasificación</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol6 = !toogleCol6">
-					<span v-if="toogleCol6 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol6" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Marca/Modelo</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol7 = !toogleCol7">
-					<span v-if="toogleCol7 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol7" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Caracteristicas</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol8 = !toogleCol8">
-					<span v-if="toogleCol8 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol8" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Referencia</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol9 = !toogleCol9">
-					<span v-if="toogleCol9 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol9" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Rotación</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol10 = !toogleCol10">
-					<span v-if="toogleCol10 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol10" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Stock</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol11 = !toogleCol11">
-					<span v-if="toogleCol11 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol11" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Coste U.</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol12 = !toogleCol12">
-					<span v-if="toogleCol12 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol12" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Coste Almacen</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol13 = !toogleCol13">
-					<span v-if="toogleCol13 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol13" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Subfamilia SSTT</h1>
-				</div>
-				<div class="flex flex-row justify-start items-center cursor-pointer hover:bg-bluedemon-100 py-1" @click="toogleCol14 = !toogleCol14">
-					<span v-if="toogleCol14 === false" class="material-icons text-sm mx-1 text-bluedemon-400">radio_button_unchecked</span>
-					<span v-if="toogleCol14" class="material-icons text-sm mx-1 text-bluedemon-400">check_circle</span>
-					<h1>Tiempos</h1>
-				</div>
-			</div>
+			</transition>
 		</div>
 	</div>
 	<!-- component -->
@@ -236,7 +239,7 @@
 			const toogleCol12 = ref(true);
 			const toogleCol13 = ref(false);
 			const toogleCol14 = ref(false);
-			const menucol = ref(true);
+			const menucol = ref(false);
 
 			return { menucol, toogleCol1, toogleCol2, toogleCol3, toogleCol4, toogleCol5, toogleCol6, toogleCol7, toogleCol8, toogleCol9, toogleCol10, toogleCol11, toogleCol12, toogleCol13, toogleCol14 };
 		},
